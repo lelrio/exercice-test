@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Druk";
+    src: url("../src/fonts/Druk\ Cond\ Super.otf");
+}
+
+.title{
+    font-family: Druk;
+}
