@@ -1,5 +1,5 @@
 <?php
 // Hey
-
+echo "hello";
 
 ?>

@@ -2,7 +2,150 @@
     font-family: "Druk";
     src: url("../src/fonts/Druk\ Cond\ Super.otf");
 }
+@font-face {
+    font-family: "Druk Wide";
+    src: url("../src/fonts/Druk\ Wide\ Super.otf");
+}
+@font-face {
+    font-family: "Helvetica Bold";
+    src: url("../src/fonts/Helvetica-Bold.ttf");
+}
+body{
+    margin: 0;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100px;
+    margin: auto;
+    background-color: white;
+}
+.left{
+    width: 50%;
+}
+.bleft{
+    color: #000000;
+    font-family: "Druk";
+    font-size: 80px;
+    letter-spacing: 0;
+}
+.fleft{
+    color: #000000;
+    font-family: "Helvetica Bold";
+    font-size: 30px;
+    letter-spacing: 0;
+}
+.right{
+    width: 50%;
+    text-align: end;
+}
+.right img{
+    height: 55px;
+    width: 53px;
+}
+.line{
+    border: solid 0.1px lightgrey;
+    width: 75%;
+    margin: auto;
+}
+.container{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100px;
+    margin: auto;
+    
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    flex-direction: column;
+}
+.position{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.divBeers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.textLeft{
+    margin-left: 50px;
+    text-align: start;
+}
+.textRight{
+    margin-right: 50px;
+    text-align: end;
+}
+.imgLeft{
+    margin-left: 650px;
+    margin-top: -500px;
+    height: 700px;
+    width: 180px;
+}
+.imgLeft img{
+    height: 700px;
+    width: 180px;
+}
+.imgRight{
+  margin-right: 650px;
+  height: 700px;
+  width: 100%;
+}
+.imgRight img{
+    height: 700px;
+    width: 100%;
+  }
 
+#beer{
+    position: absolute;
+    top: 600px;
+    z-index: -2;
+    transform: rotate(90deg);
+    color: #FFCF00;
+    font-family: "Druk Wide";
+    font-size: 884px;
+    letter-spacing: 0;
+}
 .title{
     font-family: Druk;
+    font-size: 80px;
+    margin: 0;
+    width: 300px;
+}
+.tagline{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.btn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    width: 180px;
+    height: 49px;
+    transition: all .5s ease;
+}
+button:hover {
+    color: #001F3F;
+    background-color: #fff;
 }
