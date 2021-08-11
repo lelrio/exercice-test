@@ -18,9 +18,7 @@ async function getBeers(){
     container.appendChild(position);
 
     for(var i = 0 ; i < obj.length ; i++){
-       
-
-        
+      
         var h1 = document.createElement('h1');
         var p = document.createElement('p');
         var btn = document.createElement('button');
@@ -32,7 +30,7 @@ async function getBeers(){
 
         h1.classList.add("title")
         p.classList.add("tagline")
-        btn.classList.add("btn")
+        btn.setAttribute("id", "btn");
         divBeers.classList.add("divBeers")
         divText.classList.add("divText")
         divImg.classList.add("divImg")
@@ -44,18 +42,16 @@ async function getBeers(){
             divBeers.appendChild(divText)
             divImg.classList.add("imgLeft")
             divText.classList.add("textLeft")
-
         }else{
             divBeers.appendChild(divText);
             divBeers.appendChild(divImg);
             divImg.classList.add("imgRight")
             divText.classList.add("textRight")
-
         }
        
-
         h1.textContent = obj[i].name
         btn.innerHTML = "see more"
+        btn.textContent = obj[i].id;
         p.textContent = obj[i].tagline
         img.src= obj[i].image_url
 
@@ -63,11 +59,38 @@ async function getBeers(){
         divText.appendChild(p);
         divText.appendChild(btn);
         divImg.appendChild(img);
-
-        
-
     }
+    
+    let modalBtn = document.getElementById("btn")
+    let modal = document.querySelector(".modal")
+    let closeBtn = document.querySelector(".close-btn")
+    modalBtn.onclick = function(){
+      modal.style.display = "block"
+      const contain = document.getElementsByClassName('contain')[0];
+      const contenuLeft = document.getElementsByClassName('contenuLeft')[0];
+      const contenuRight = document.getElementsByClassName('contenuRight')[0];
+      contain.appendChild(contenuLeft);
+      contain.appendChild(contenuRight);
+      contenuLeft.appendChild(img);
+      contenuRight.appendChild(h1);
+      contenuLeft.classList.add("leftImage")
+      contenuRight.classList.add("rightText")
+      
+    }
+    closeBtn.onclick = function(){
+      modal.style.display = "none"
+    }
+    window.onclick = function(e){
+      if(e.target == modal){
+        modal.style.display = "none"
+      }
+    }
+
+  
+    
     
 }
 
+
 getBeers();
+

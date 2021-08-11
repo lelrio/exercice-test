@@ -31,15 +31,54 @@
        
     </div>
 </div>
-<hr class="line">
-    <div class="footer">
-        <div class="left">
-                <p class="fleft">CHEERS</p>
+<div id="container">
+        <div id="buttons">
         </div>
-        <div class="right">
-                <p class="fleft">PUNK API V2</p>
+        <div id="table">
         </div>
     </div>
+<div class="modal">
+    <div class="modal-content">
+    <div class="menu">
+        <div class="left">
+            <p class="bleft">B</p>
+        </div>
+        <span class="close-btn">&times;</span>
+        <div class="right">
+           <img src="../src/img/beer_apple.png" alt="">
+        </div>
+    </div>
+    <hr class="line">
+    <div class="contain">
+        <div class="contenuLeft">
+
+        </div>
+        <div class="contenuRight">
+
+        </div>
+    </div>
+    <hr class="line">
+    <div class="footer">
+        <div class="left">
+            <p class="fleft">CHEERS</p>
+        </div>
+        <div class="right">
+            <p class="fleft">PUNK API V2</p>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<hr class="line">
+<div class="footer">
+    <div class="left">
+            <p class="fleft">CHEERS</p>
+    </div>
+    <div class="right">
+            <p class="fleft">PUNK API V2</p>
+    </div>
+</div>
 </body>
 
 </html>
