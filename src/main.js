@@ -1,7 +1,9 @@
+//récupération des données de l'api 
 const api_url = "https://api.punkapi.com/v2/beers?per_page=10"
 async function getBeers() {
   const response = await fetch(api_url);
   const data = await response.json();
+  //affichage des données pour savoir si je les récupère bien
   console.log(data);
 
 
@@ -14,6 +16,7 @@ async function getBeers() {
 
   container.appendChild(position);
 
+  // Boucle afin de créer mes éléments et ainsi faire l'affichage
   for (var i = 0; i < obj.length; i++) {
     // Menu
     var menu = document.createElement('div')
@@ -36,6 +39,7 @@ async function getBeers() {
     menu.appendChild(right)
     left.appendChild(bleft)
     right.appendChild(bright)
+
     // Footer 
     var footer = document.createElement('div')
     footer.classList.add('footer')
@@ -56,7 +60,7 @@ async function getBeers() {
     right.appendChild(fright)
 
 
-      
+    // création d'élément html pour la mise en place de la home et de la modal
     var h1 = document.createElement('h1');
     var p = document.createElement('p');
     var btn = document.createElement('button');
@@ -95,8 +99,6 @@ async function getBeers() {
     modalSpecification.classList.add('greyTitle')
     modalIngredients.classList.add('greyTitle')
 
-    
-
     var modal = document.createElement("modal");
     modal.appendChild(menu)
     modal.classList.add("modal");
@@ -111,6 +113,7 @@ async function getBeers() {
     contenuRight.classList.add('contenuRight')
 
 
+    // création des blocs
     modal.appendChild(contain);
     contain.appendChild(contenuLeft)
     contain.appendChild(line)
@@ -134,6 +137,7 @@ async function getBeers() {
     contenuLeft.classList.add("leftImage")
     contenuRight.classList.add("rightText")
 
+    // fonction d'ouverture de modal
     btn.onclick = function () {
       document.getElementById("modal" + this.id).style.display = "block"
     }
@@ -144,6 +148,7 @@ async function getBeers() {
     var divText = document.createElement('div')
     var divImg = document.createElement('div')
 
+    // ajout de style 
     h1.classList.add("title")
     p.classList.add("tagline")
     btn.classList.add("btn")
@@ -157,6 +162,7 @@ async function getBeers() {
 
     position.appendChild(divBeers);
 
+    // boucle pour l'affichage en quinconce
     if (i % 2 == 1) {
       divBeers.appendChild(divImg);
       divBeers.appendChild(divText)
