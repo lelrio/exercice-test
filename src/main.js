@@ -29,27 +29,36 @@ async function getBeers(){
         var modalImg = document.createElement('img')
         var modalTitle = document.createElement('h1');
         var modalTagline = document.createElement('h3')
-        var modalDescription = document.createElement('p')
-        var modalAbv = document.createElement('h5')
-        var modalIbu = document.createElement('h5') 
-        var modalEbcSrm = document.createElement('h5') 
-        var modalMalt = document.createElement('h5') 
-        var modalYeast = document.createElement('h5') 
+        var modalDescription = document.createElement('h5')
+        var modalSpecification = document.createElement('span')
+        var modalFirstBrew = document.createElement('p')
+        var modalAbv = document.createElement('p')
+        var modalIbu = document.createElement('p') 
+        var modalEbcSrm = document.createElement('p') 
+        var modalIngredients = document.createElement('span')
+        var modalMalt = document.createElement('p') 
+        var modalYeast = document.createElement('p') 
 
+        modalImg.src = obj[i].image_url
         modalTitle.textContent = obj[i].name
+        modalFirstBrew.innerHTML = "<h4 class='bold'>First Brewed</h4>" + obj[i].first_brewed
         modalTagline.textContent = obj[i].tagline
         modalDescription.textContent = obj[i].description
-        modalAbv.innerHTML = "ABV" + obj[i].abv
-        modalIbu.innerHTML = "Ibu" + obj[i].ibu
-        modalEbcSrm.textContent ="Ebc/Srm" +  obj[i].ebc + "/" + obj[i].srm
+        modalAbv.innerHTML = "<h4 class='bold'>Abv</h4>" + obj[i].abv
+        modalIbu.innerHTML = "<h4 class='bold'>Ibu</h4>" + obj[i].ibu
+        modalEbcSrm.innerHTML = "<h4 class='bold'>Ebc/Srm</h4>" +  obj[i].ebc + "/" + obj[i].srm
 
         var text = "";
         for(var j = 0; j < obj[i].ingredients.malt.length; j++){
           text += obj[i].ingredients.malt[j].name + "<br>"
         }
-        modalMalt.innerHTML = text
-        modalYeast.textContent= obj[i].ingredients.yeast
-
+        modalMalt.innerHTML = "<h4 class='bold'>Malt</h4>" + text
+        modalYeast.innerHTML = "<h4 class='bold'>Yeast</h4>" + obj[i].ingredients.yeast
+        modalSpecification.innerHTML = "Specifications"
+        modalIngredients.innerHTML = "Ingredients"
+        modalSpecification.classList.add('greyTitle')
+        modalIngredients.classList.add('greyTitle')
+      
         
         var modal = document.createElement("modal");
         modal.classList.add("modal");
@@ -60,16 +69,23 @@ async function getBeers(){
         closeBtn.innerHTML = "X"
         closeBtn.classList.add('close-btn')
         contain.classList.add('contain')
+        contenuLeft.classList.add('contenuLeft')
+        contenuRight.classList.add('contenuRight')
+
 
         modal.appendChild(contain);
         contain.appendChild(contenuLeft)
         contain.appendChild(contenuRight);
         contenuLeft.appendChild(modalImg);
+        contenuRight.appendChild(modalTitle);
         contenuRight.appendChild(modalTagline);
         contenuRight.appendChild(modalDescription);
+        contenuRight.appendChild(modalSpecification);
+        contenuRight.appendChild(modalFirstBrew);
         contenuRight.appendChild(modalAbv);
         contenuRight.appendChild(modalIbu);
         contenuRight.appendChild(modalEbcSrm);
+        contenuRight.appendChild(modalIngredients);
         contenuRight.appendChild(modalMalt);
         contenuRight.appendChild(modalYeast);
 
@@ -116,7 +132,7 @@ async function getBeers(){
         h1.textContent = obj[i].name
         btn.innerHTML = "see more"
         p.textContent = obj[i].tagline
-        img.src= obj[i].image_url
+        img.src = obj[i].image_url
 
         divText.appendChild(h1);
         divText.appendChild(p);
