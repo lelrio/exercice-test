@@ -49,6 +49,7 @@ body{
     border: solid 0.1px lightgrey;
     width: 75%;
     margin: auto;
+    z-index: 10;
 }
 .container{
     height: auto;
@@ -158,9 +159,11 @@ button:hover {
     left: 0; 
     top: 0;
     width: 100%;
-    height: 100%; 
+    max-height: 100%;
+    overflow-y: scroll;
     background-color: white;
-    background-color: white;
+    animation-name: animatetop;
+    animation-duration: 1s;
   }
   .modal-content {
     position: relative; 
@@ -169,14 +172,13 @@ button:hover {
     margin: auto; 
     width: 100%;  
     height: 100%;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+    
 }
   .close-btn {
-    color: dark; 
-    font-size: 80px;  
+    font-size: 70px;  
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+    animation: animatetop 1;
   }
   .close-btn:hover {
     color: darkgray;
@@ -186,7 +188,7 @@ button:hover {
     to {top:0; opacity:1}
   }
   @keyframes animatetop {
-    from {top:-300px; opacity:0}
+    from {bottom:-300px; opacity:0}
     to {top:0; opacity:1}
   }
   .contain{
@@ -199,12 +201,10 @@ button:hover {
   }
   .contenuLeft{
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       width: 50%;
-      margin: 50px 0 50px 0;
-      border-right: 1px solid lightgrey;
-      border-top-width: 150%;
+      margin: 50px 0 50px 150px;
   }
   .contenuLeft img{
       height: 700px;
@@ -215,31 +215,32 @@ button:hover {
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    margin-left: 100px;
   }
   .contenuRight h1{
       font-family: Druk;
       font-size: 80px;
+      width: 65%;
       margin: 0;
   }
   .contenuRight h3{
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
       font-size: 30px;
+      width: 65%;
       margin: 0;
   }
   .contenuRight p{
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 80%;
+      width: 65%;
       margin: 0;
       text-align: end;
       font-family: Arial, Helvetica, sans-serif;
       border-top: 1px solid lightgrey;
   }
   .contenuRight h5{
-      width: 70%;
+      width: 65%;
     font-family: Arial, Helvetica, sans-serif;
   }
   .bold{
@@ -255,4 +256,15 @@ button:hover {
       color: #CCCCCC;
       font-size: 25px;
       margin: 20px 0 30px 0;
+  }
+  .modal .menu{
+      border-bottom: 1px solid lightgrey;
+  }
+  .modal .footer{
+      border-top: 1px solid lightgrey;
+  }
+  .separation{
+      border: 1px solid lightgrey;
+      height: 878px;
+      margin: 0 150px 0 0;
   }
